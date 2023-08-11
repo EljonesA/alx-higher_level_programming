@@ -2,6 +2,7 @@
 
 import sys
 
+
 def cal():
     if len(sys.argv) <= 1:
         print("0")
