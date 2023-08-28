@@ -10,7 +10,7 @@ def safe_print_list(my_list=[], x=0):
             print(value, end='')
             count += 1
     except:
-        pass #handle any exception without taking action
+        pass
     finally:
-        print() #print new line after all elements
+        print()
     return count
