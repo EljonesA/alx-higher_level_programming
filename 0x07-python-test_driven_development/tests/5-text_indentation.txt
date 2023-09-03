@@ -1,0 +1,61 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text = "Hello? Am Aduwa Eljones. A soft:engineer"
+>>> text_indentation(text)
+Hello?
+
+Am Aduwa Eljones.
+
+A soft:
+
+engineer
+
+>>> text = 98
+>>> text_indentation(text)
+Traceback (most recent call last):
+  ...
+TypeError: text must be a string
+
+>>> text_indentation("Hello. How are you? This is a test: What do you think?")
+Hello.
+
+How are you?
+
+This is a test:
+
+What do you think?
+
+
+>>> text_indentation("")
+
+
+>>> text_indentation(".?:")
+.
+
+?
+
+:
+
+
+>>> text_indentation("Hello: World")
+Hello:
+
+World
+
+>>> text_indentation("Multiple...dots?!")
+Multiple.
+
+.
+
+.
+
+dots?
+
+!
+
+
+>>> text_indentation("This is a test\nwith line breaks.")
+This is a test
+with line breaks
+
+
