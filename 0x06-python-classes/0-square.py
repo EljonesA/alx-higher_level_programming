@@ -2,4 +2,13 @@
 
 
 class Square:
+    """
+    This class defines an empty square.
+
+    Attributes:
+        None
+
+    Methods:
+        None
+    """
     pass
