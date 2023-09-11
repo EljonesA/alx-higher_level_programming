@@ -3,7 +3,13 @@
 
 
 class BaseGeometry:
-    """ Class with area method """
+    """ 
+    Base class for geometry operations
+
+    Public methods:
+    - area(): raises an exception
+    - integer_validator(name, value): validates an int
+    """
 
     def area(self):
         """
@@ -18,9 +24,9 @@ class BaseGeometry:
         """
         Validates a value
 
-        Args:
-            name: a string
-            value: int to validate
+        args:
+            name (str): a string
+            value (int): int to validate
 
         Raises:
             TypeError: value must be an integer

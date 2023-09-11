@@ -1,4 +1,4 @@
->>> base_geometry = __import__("7-base_geometry")
+>>> base_geometry = __import__("7-base_geometry").BaseGeometry
 
 >>> base_geometry.area()
 Traceback (most recent call last):
