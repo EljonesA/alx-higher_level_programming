@@ -53,4 +53,4 @@ class Student:
                 json: a dictionary
             """
             for key, value in json.items():
-                setattr(self, key, value):
+                setattr(self, key, value)
