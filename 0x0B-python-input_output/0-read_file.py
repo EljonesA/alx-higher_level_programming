@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" function that opens a file"""
 
 
 def read_file(filename=""):
