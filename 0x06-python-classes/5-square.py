@@ -20,12 +20,10 @@ class Square:
         """ Instantaition of the class attributes """
         self.__size = size
 
-    @size.getter
     def size(self):
         """ Returns size of the square """
         return self.__size
 
-    @size.setter
     def size(self, value):
         """
         Sets siz of the square to a new value

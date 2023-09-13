@@ -24,12 +24,10 @@ class Square:
         self.__size = size
         self.__position = position
 
-    @size.getter
     def size(self):
         """ returns size of the square """
         return self.__size
 
-    @size.setter
     def size(self, value):
         """
         Sets size of the square to new value
