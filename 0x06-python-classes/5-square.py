@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-""" MOdule with Square class """
+"""
+Module with Square class
+Author: EljonesA - github username
+"""
 
 
 class Square:
