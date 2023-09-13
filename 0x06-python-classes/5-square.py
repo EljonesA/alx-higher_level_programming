@@ -1,18 +1,39 @@
 #!/usr/bin/python3
+""" MOdule with Square class """
 
 
 class Square:
-    def __init__(self, size=0):
-        self.size = size
+    """
+    Class for a square
 
-    ''' size getter
-    '''
+    Args:
+        size (optional): of the square
+
+    Methods:
+        area: computes area of the square
+        my_print: draws the square using char #
+     """
+    def __init__(self, size=0):
+        """ Instantaition of the class attributes """
+        self.__size = size
+
+    @size.getter
     def size(self):
+        """ Returns size of the square """
         return self.__size
 
-    ''' size setter
-    '''
+    @size.setter
     def size(self, value):
+        """
+        Sets siz of the square to a new value
+
+        Args:
+           value: new size of the square
+
+        Raises:
+            TypeError: value must be an integer
+            ValueError: value must be >= 0
+        """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
@@ -20,9 +41,11 @@ class Square:
         self.__size = value
 
     def area(self):
+        """ Computes Area of the square """
         return self.__size ** 2
 
     def my_print(self):
+        """ Draws the square using char '#' """
         if self.__size == 0:
             print()
         else:
