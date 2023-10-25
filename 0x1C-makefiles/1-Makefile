@@ -1,0 +1,12 @@
+# variables
+CC = gcc
+SRC = school.c # files to be compiled
+
+all: school # rule to build the executable
+
+# rule to build ' school' using specified src files
+school: $(SRC)
+	$(CC) -Wall -o school $(SRC)
+
+CLEAN:
+	rm -f school
