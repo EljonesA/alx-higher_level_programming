@@ -1,0 +1,12 @@
+all: school # rule to buid the executable
+
+# build school using school.o
+school: school.o
+	gcc -Wall -o school school.o
+
+# compile school.c to school.o
+school.o: school.c
+	gcc -Wall -c school.c
+
+clean: # clean generated files
+	rm -f school.o school
