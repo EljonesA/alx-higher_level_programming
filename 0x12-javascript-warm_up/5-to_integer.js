@@ -8,7 +8,7 @@ const convertedInt = parseInt(firstArg);
 
 // check conversion. If successful log the number
 if (!isNaN(convertedInt)) {
-  console.log('My number: ${convertedInt}');
+  console.log(`My number: ${convertedInt}`);
 } else {
   console.log('Not a number');
 }
