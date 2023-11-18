@@ -7,7 +7,7 @@ const firstArg = process.argv[2];
 const convertedInt = parseInt(firstArg);
 
 // check conversion. If successful log the number
-if (!isNan(convertedInt) {
+if (!isNaN(convertedInt)) {
   console.log('My number: ${convertedInt}');
 } else {
   console.log('Not a number');
