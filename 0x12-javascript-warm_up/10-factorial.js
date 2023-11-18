@@ -2,7 +2,7 @@
 
 // function to calculate the factorial
 function factorial(n) {
-  if (isNan(n) || n < 0) {
+  if (isNaN(n) || n < 0) {
     return 1;
   } else if (n === 0) {
     return 1;
