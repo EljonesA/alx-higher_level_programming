@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 // add function
-function add(a, b) {
+function add (a, b) {
   return a + b;
 }
 
