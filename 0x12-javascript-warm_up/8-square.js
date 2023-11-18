@@ -15,7 +15,7 @@ if (!isNaN(size)) {
         row += 'X';
       }
       console.log(row);
-     }
+    }
   } else {
     console.log(''); // print empty line for non-positive sizes
   }
