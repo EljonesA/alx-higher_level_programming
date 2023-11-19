@@ -34,7 +34,7 @@ def filter_states_by_name(username, password, database, state_name):
 
     # execute SELECT query with WHERE clause
     query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    cursor.execute(query, (state_name))
+    cursor.execute(query, (state_name,))
 
     # fetch all rows
     rows = cursor.fetchall()
