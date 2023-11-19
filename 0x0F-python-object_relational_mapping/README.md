@@ -1,4 +1,4 @@
-#In this project, you will link two amazing worlds: Databases and Python!
+# In this project, you will link two amazing worlds: Databases and Python!
 
 - In the first part, you will use the module MySQLdb to connect to a MySQL database and execute your SQL queries.
 
@@ -12,7 +12,7 @@
 - How to map a Python Class to a MySQL table
 - How to create a Python Virtual Environment
 
-#RESOURCES📚
+# RESOURCES📚
 - https://www.fullstackpython.com/object-relational-mappers-orms.html
 - https://mysqlclient.readthedocs.io/
 - https://www.mikusa.com/python-mysql-docs/index.html
