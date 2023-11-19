@@ -1,53 +1,47 @@
 #!/usr/bin/python3
 """
-Script to list al cities of a specified state from the database hbtn_0e_0_usa.
-
-Usage:
-    ./0-select_states.py username password database
+Script that takes in the name of a state as an argument and lists all cities
+of that state, using the database hbtn_0e_4_usa
 """
 
-# import required modules
 import MySQLdb
-import sys  # capture command line args
+import sys
 
 
 def filter_cities_by_state(username, password, database, state_name):
     """
-    Connects to the MySQL server and retrieves and prints all cities
-    from the 'cities' table of the specifiwd state.
-
-    Args:
-        username (str): MySQL username.
-        password (str): MySQL password.
-        database (str): Database name.
-        state_name (str): Name of the state to filter cities.
-
-    Returns:
-        None
+    Lists all cities of a specified state from the database hbtn_0e_4_usa
     """
 
-    # create a connection
+    # Create a connection
     db = MySQLdb.connect(host="localhost", port=3306, user=username,
                          passwd=password, db=database)
 
-    # create a cursor object
+    # Create a cursor object
     cursor = db.cursor()
 
-    # execute, fetch and print the database records
+    # Execute the query
     query = """
-        SELECT GROUP_CONCAT(cities.name ORDER BY cities.id ASC)
+        SELECT cities.name
         FROM cities
         JOIN states ON cities.state_id = states.id
         WHERE states.name = %s
+        ORDER BY cities.id ASC
     """
-    cursor.execute(query, (state_name,))  # must be a tuple
-    result = cursor.fetchone()
-    if result and result[0]:
-        print(result[0])
+    cursor.execute(query, (state_name,))
+
+    # Fetch all the results as a tuple
+    results = cursor.fetchall()
+
+    # Check if any results were found
+    if results:
+        # Extract city names and join them into a comma-separated string
+        cities = ', '.join(result[0] for result in results)
+        print(cities)
     else:
         print("No cities found for the specified state.")
 
-    # close the cursor & connection
+    # Close the cursor and connection
     cursor.close()
     db.close()
 
@@ -56,13 +50,14 @@ if __name__ == "__main__":
     """
     Entry point of the script
     """
-    # ensure correct number of args provided
-    if len(sys.argv) != 4:
-        print("Usage: {} username password database".format(sys.argv[0]))
+
+    # Ensure the correct number of arguments
+    if len(sys.argv) != 5:
+        print("Usage: {} username password database state_name".format(sys.argv[0]))
         sys.exit(1)
 
-    # capture the command line arguments
+    # Capture the command line arguments
     username, password, database, state_name = sys.argv[1:]
 
-    # call display_state function
+    # Call the function
     filter_cities_by_state(username, password, database, state_name)
