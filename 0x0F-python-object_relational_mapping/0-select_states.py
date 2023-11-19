@@ -1,4 +1,4 @@
-#!/usr/bin
+#!/usr/bin/python3
 # import required modules
 import MySQLdb
 import sys  # capture command line args
