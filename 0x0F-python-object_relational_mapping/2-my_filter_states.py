@@ -4,6 +4,7 @@ Write a script that takes in an argument and displays all values
 in the states table of hbtn_0e_0_usa where name matches the argument.
 """
 
+# import required modules
 import MySQLdb
 import sys
 
@@ -47,7 +48,7 @@ def filter_states_by_name(username, password, database, state_name):
     db.close()
 
 
-if name == "__main__":
+if __name__ == "__main__":
     """ Script entry point """
     # ensure correct number of args
     if len(sys.argv) != 5:
