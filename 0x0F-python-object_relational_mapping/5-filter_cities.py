@@ -40,7 +40,7 @@ def filter_cities_by_state(username, password, database, state_name):
     JOIN states ON cities.state_id = states.id
     WHERE states.name = %s
     """
-    cursor.execute(query, (state_name,)) # must be a tuple
+    cursor.execute(query, (state_name,))  # must be a tuple
     row = cursor.fetchone()
     if row:
         print(row[0])
@@ -65,4 +65,4 @@ if __name__ == "__main__":
     username, password, database = sys.argv[1:]
 
     # call display_state function
-    filter_cities_by_state(username, password, database)
+    filter_cities_by_state(username, password, database, state_name)
