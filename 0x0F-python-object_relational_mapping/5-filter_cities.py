@@ -42,7 +42,7 @@ def filter_cities_by_state(username, password, database, state_name):
     """
     cursor.execute(query, (state_name,))  # must be a tuple
     result = cursor.fetchone()
-    if result:
+    if result and result[0]:
         print(result[0])
     else:
         print("No cities found for the specified state.")
