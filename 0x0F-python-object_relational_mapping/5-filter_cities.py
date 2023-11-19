@@ -35,15 +35,15 @@ def filter_cities_by_state(username, password, database, state_name):
 
     # execute, fetch and print the database records
     query = """
-    SELECT GROUP_CONCAT(cities.name ORDER BY cities.id ASC)
-    FROM cities
-    JOIN states ON cities.state_id = states.id
-    WHERE states.name = %s
+        SELECT GROUP_CONCAT(cities.name ORDER BY cities.id ASC)
+        FROM cities
+        JOIN states ON cities.state_id = states.id
+        WHERE states.name = %s
     """
     cursor.execute(query, (state_name,))  # must be a tuple
-    row = cursor.fetchone()
-    if row:
-        print(row[0])
+    result = cursor.fetchone()
+    if result:
+        print(result[0])
     else:
         print("No cities found for the specified state.")
 
@@ -62,7 +62,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     # capture the command line arguments
-    username, password, database = sys.argv[1:]
+    username, password, database, state_name = sys.argv[1:]
 
     # call display_state function
     filter_cities_by_state(username, password, database, state_name)
