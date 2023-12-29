@@ -5,14 +5,12 @@
 class Rectangle {
 	constructor (w, h) {
 		// ensure w/h > 0 and a number, else create empty object
-		if (w <= 0 || !Number.isInteger(w) || h <= 0 || !Number.isInteger(h))
-		{
-			return {};
-		}
-		else
-		{
+		if (w > 0 && h > 0) {
 			this.width = w;
 			this.height = h;
+		}
+		else {
+			return {}
 		}
 	}
 }
