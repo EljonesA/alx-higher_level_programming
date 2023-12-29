@@ -9,9 +9,11 @@ class Rectangle {
 		{
 			return {};
 		}
-
-		this.width = w;
-		this.height = h;
+		else
+		{
+			this.width = w;
+			this.height = h;
+		}
 	}
 }
 
