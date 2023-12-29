@@ -1,4 +1,6 @@
 #!/usr/bin/node
+//Parent class
+const Rectangle = require('./4-rectangle');
 
 
 // class square that inherits class Rectangle
