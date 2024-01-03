@@ -1,3 +1,3 @@
 #!/bin/bash
 # script that takes in a URL, sends request to that URL, displays body of response
-[ "$(curl -sI -w "%{http_code}" "$1" | tail -n1)" -eq 200 -a "$(curl -sI -w "%{http_code}" "$1" | tail -n1)" -lt 300 ] && curl -s "$1"
+curl -Ls "$1"
