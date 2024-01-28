@@ -27,6 +27,7 @@ def fetch_commits(repo_name, owner_name):
         for commit in commits:
             sha = commit['sha']
             author_name = commit['commit']['author']['name']
+            # commit_message = commit['commit']['message']
             print(f"{sha}: {author_name}")
     else:
         print(f"Error: Failed to fetch commits. Status code:\

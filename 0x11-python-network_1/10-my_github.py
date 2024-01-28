@@ -13,8 +13,7 @@ if __name__ == "__main__":
 
     url = 'https://api.github.com/user'
 
-    headers = {'Authorization': 'Basic ' + f'{username}:{password}'}
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, auth=(username, password))
     if response.status_code == 200:
         # Parse the response as JSON
         data = response.json()
