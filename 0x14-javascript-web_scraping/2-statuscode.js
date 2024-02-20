@@ -7,7 +7,7 @@ const request = require('request');
 const url = process.argv[2];
 
 // use request to send a GET request to the URL
-request(url, (error, response, body) => {
+request.get(url, (error, response, body) => {
   if (error) {
     process.exit(1);
   }
