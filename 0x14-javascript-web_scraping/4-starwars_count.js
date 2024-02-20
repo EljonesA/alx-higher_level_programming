@@ -21,9 +21,7 @@ request.get(url, (error, response, body) => {
   try {
     const films = JSON.parse(body).results;
 
-    const count = films.filter(film => film.characters.includes(
-	    `https://swapi-api.alx-tools.com/api/people/${charId}/`)).length;
-
+    const count = films.filter(film => film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${charId}/`)).length;
     console.log(count);
   } catch (err) {
     process.exit(1);
